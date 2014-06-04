@@ -7,7 +7,6 @@ select.data$Global_reactive_power <- as.numeric(select.data$Global_reactive_powe
 select.data$Voltage <- as.numeric(select.data$Voltage)
 select.data[,date.time:=paste(as.character(Date),Time)]
 formatted.time <- strptime(select.data$date.time, format="%Y-%m-%d %H:%M:%S")
-select.data <- cbind(select.data, formatted.time)
 par(mfrow=c(2,2))
 plot(formatted.time,select.data$Global_active_power, type="l", xlab="", ylab="Global active power (kilowatts)")
 plot(formatted.time,select.data$Voltage, type="l", xlab="datetime", ylab="Voltage")

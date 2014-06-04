@@ -4,7 +4,6 @@ fulldata$Date <- as.Date(fulldata$Date, format="%d/%m/%Y")
 select.data <- subset(fulldata, Date=="2007-02-01" | Date=="2007-02-02")
 select.data[,date.time:=paste(as.character(Date),Time)]
 formatted.time <- strptime(select.data$date.time, format="%Y-%m-%d %H:%M:%S")
-select.data <- cbind(select.data, formatted.time)
 plot(formatted.time, select.data$Sub_metering_1, type="n", xlab="", ylab="Energy sub metering")
 with(select.data, lines(formatted.time, select.data$Sub_metering_1, col="black"))
 with(select.data, lines(formatted.time, select.data$Sub_metering_2, col="red"))
