@@ -1,3 +1,4 @@
+## The "data.table" package is required to run this script. Script will run when saved in the same working directory as the "Electric power consumption" dataset
 library(data.table)
 fulldata <- fread("./household_power_consumption.txt")
 fulldata$Date <- as.Date(fulldata$Date, format="%d/%m/%Y")
